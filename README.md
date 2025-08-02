@@ -22,7 +22,7 @@ Players click on randomly spawning colored shapes to earn points. Different shap
 
 ---
 
-## How to Play
+## How to Play 
 
 1. Enter your name on the start menu and hit **Start**.  
 2. Click the shapes before they disappear to earn points.  
@@ -43,7 +43,15 @@ Players click on randomly spawning colored shapes to earn points. Different shap
 
 ---
 
-## How to Run
+## Download & Play (for Players/Reviewers)
+
+> [Download OOP Theory Build (Windows)](https://github.com/your-username/OOPTheory/releases/latest)
+
+> Known Issue: Build may not open on some systems due to Unity 2020 LTS compatibility.  
+> All scripts and source code are available in the repo for review.
+
+
+## How to Run (for Developers)
 
 - Open the project in Unity 2020.3.7f1 (or later).  
 - Ensure all scenes (`StartMenu`, `Main`) are added to **Build Settings**.  
