@@ -2,17 +2,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    // Singleton instance for easy access
+    // This allows other scripts to access the GameManager without needing a reference
+    // It manages the game state, including tracking misses and handling game over conditions
+    // It also manages the UI panels for win and lose states
     public static GameManager Instance;
 
     private int misses = 0;
     private const int maxMisses = 3;
     private bool gameOver = false;
 
+    // UI Panels for win and lose states
+    // These panels are activated when the game is won or lost
     [Header("UI Panels")]
     public GameObject losePanel;
     public GameObject winPanel;
     public GameObject gameplayUI;
 
+    // Awake is called when the script instance is being loaded
+    // This is where the singleton instance is set up
+    // It also initializes the UI states
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +39,9 @@ public class GameManager : MonoBehaviour
         misses = 0;
     }
 
+    // Public methods to access game state
+    // These methods allow other scripts to check if the game is over or to register misses
+    // They also provide methods to handle winning and losing the game
     public bool IsGameOver()
     {
         return gameOver;
@@ -47,6 +60,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // This method is called when the game is over
+    // It sets the game over state, activates the lose panel, and deactivates the gameplay UI
+    // It also logs a message to the console
     private void GameOver()
     {
         gameOver = true;
@@ -73,7 +89,10 @@ public class GameManager : MonoBehaviour
             gameplayUI.SetActive(false);
     }
 
-    // Optional: reset game state for restart
+    // This method resets the game state
+    // It sets the game over state to false, resets misses, and reactivates the
+    // gameplay UI while deactivating the win and lose panels
+    // It can be called to restart the game without reloading the scene
     public void ResetGame()
     {
         gameOver = false;
@@ -87,7 +106,5 @@ public class GameManager : MonoBehaviour
 
         if (gameplayUI != null)
             gameplayUI.SetActive(true);
-
-        // Add any other reset logic here
     }
 }
