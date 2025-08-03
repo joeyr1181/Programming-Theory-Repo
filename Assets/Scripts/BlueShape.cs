@@ -13,7 +13,6 @@ public class BlueShape : Shape
         ShapeName = "Blue Shape";
         ShapeColor = Color.blue;
         GetComponent<Renderer>().material.color = ShapeColor;
-        pointValue = 3; // Blue shapes are worth 3 points
     }
 
     public override void DisplayText()
